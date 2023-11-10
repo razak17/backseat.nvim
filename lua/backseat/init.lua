@@ -9,7 +9,9 @@ local default_opts = {
     highlight = {
         icon = '',
         group = 'String',
-    }
+    },
+    popup_type = "popup",
+    winhighlight = "Normal:Normal,FloatBorder:FloatBorder",
 }
 
 function M.setup(opts)
@@ -44,6 +46,14 @@ function M.setup(opts)
     -- if vim.g.backseat_highlight_group == nil then
     vim.g.backseat_highlight_group = opts.highlight.group
     -- end
+
+    -- if vim.g.backseat_popup_type == nil then
+    vim.g.backseat_popup_type = opts.popup_type
+    -- end
+
+    -- if vim.g.backseat_winhighlight == nil then
+    vim.g.backseat_winhighlight = opts.winhighlight
+    --  end
 end
 
 return M

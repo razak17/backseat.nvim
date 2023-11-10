@@ -387,6 +387,8 @@ vim.api.nvim_create_user_command("BackseatAsk", function(opts)
 
     print("Asking AI '" .. opts.args .. "' (in " .. bufname .. ")...")
 
+    local display_popup = require('backseat.display_popup')
+
     gpt_request(vim.json.encode(
         {
             model = get_model_id(),
@@ -405,7 +407,7 @@ vim.api.nvim_create_user_command("BackseatAsk", function(opts)
                 }
             },
         }
-    ), backseat_ask_callback)
+    ), display_popup)
 end, { nargs = "+" })
 
 -- Clear all backseat virtual text and signs
